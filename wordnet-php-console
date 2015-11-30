@@ -7,3 +7,4 @@ use WordNet\WordNet;
 require __DIR__ . '/vendor/autoload.php';
 
 $wordnet = new WordNet();
+

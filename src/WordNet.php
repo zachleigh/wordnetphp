@@ -30,7 +30,9 @@ class WordNet
      */
     public function lookup($word)
     {
-        $result = shell_exec($this->config['path'].' '.$word.' -over');
+        $path = $this->getWordNetPath();
+
+        $result = shell_exec($path.' '.$word.' -over');
 
         $this->result = $result;
 
@@ -47,5 +49,25 @@ class WordNet
         $parser = new PartsOfSpeech($this->result);
 
         return $parser->handle();
+    }
+
+    /**
+     * Find WordNet path.
+     *
+     * @return string/Exception
+     */
+    private function getWordNetPath()
+    {
+        if ($this->config['path']) {
+            return $this->config['path'];
+        }
+
+        $path = trim(shell_exec('which wn'));
+
+        if (!$path) {
+            throw new \Exception('WordNet cannot be found.');
+        }
+
+        return $path;
     }
 }

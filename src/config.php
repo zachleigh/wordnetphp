@@ -9,5 +9,5 @@ return [
     | The full path to your WordNet install.
     |
     */
-    'path' => '/usr/local/WordNet-3.0/bin/wn'
+    'path' => ''
 ];
