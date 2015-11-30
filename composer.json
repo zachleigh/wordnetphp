@@ -1,0 +1,35 @@
+{   
+    "name": "zachleigh/wordnet-php",
+    "type": "project",
+    "description": "A php wrapper for WordNet.",
+    "keywords": ["wordnet", "language", "dictionary", "english"],
+    "homepage": "https://github.com/zachleigh/wordnet-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zach Leigh",
+            "email": "zachleigh@fastmail.jp",
+            "role": "Developer"
+        }
+    ],
+
+    "require-dev": {
+        "phpunit/phpunit": "5.0.*"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "WordNet\\": "src/"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "WordNet\\Tests\\": "tests/"
+        }
+    },
+    
+    "require": {
+
+    }
+}
