@@ -2,9 +2,9 @@
 
 <?php
 
-use WordNet\WordNet;
+use WordNetPHP\WordNetPHP;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$wordnet = new WordNet();
+$wordnet = new WordNetPHP();
 

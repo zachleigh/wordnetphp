@@ -1,23 +1,23 @@
 <?php
 
-namespace WordNet\Tests;
+namespace WordNetPHP\Tests;
 
-use WordNet\WordNet;
-use WordNet\Tests\TestCase;
+use WordNetPHP\WordNetPHP;
+use WordNetPHP\Tests\TestCase;
 
 class PartsOfSpeechTest extends TestCase
 {
     /**
-     * @var WordNet\WordNet
+     * @var WordNetPHP\WordNetPHP
      */
     public static $wordnet;
 
     /**
-     * Set static WordNet on object.
+     * Set static WordNetPHP on object.
      */
     public static function setUpBeforeClass()
     {
-        self::$wordnet = new WordNet();
+        self::$wordnet = new WordNetPHP();
     }
 
     /**

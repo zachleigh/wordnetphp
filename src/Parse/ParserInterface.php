@@ -1,6 +1,6 @@
 <?php
 
-namespace WordNet\Parse;
+namespace WordNetPHP\Parse;
 
 interface ParserInterface
 {

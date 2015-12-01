@@ -19,13 +19,13 @@
 
     "autoload": {
         "psr-4": {
-            "WordNet\\": "src/"
+            "WordNetPHP\\": "src/"
         }
     },
 
     "autoload-dev": {
         "psr-4": {
-            "WordNet\\Tests\\": "tests/"
+            "WordNetPHP\\Tests\\": "tests/"
         }
     },
     

@@ -1,9 +1,9 @@
 <?php
 
-namespace WordNet\Parse\Parsers;
+namespace WordNetPHP\Parse\Parsers;
 
-use WordNet\Parse\Parser;
-use WordNet\Parse\ParserInterface;
+use WordNetPHP\Parse\Parser;
+use WordNetPHP\Parse\ParserInterface;
 
 class PartsOfSpeech extends Parser implements ParserInterface
 {
