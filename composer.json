@@ -1,9 +1,9 @@
 {   
-    "name": "zachleigh/wordnet-php",
+    "name": "zachleigh/wordnetphp",
     "type": "project",
     "description": "A php wrapper for WordNet.",
     "keywords": ["wordnet", "language", "dictionary", "english"],
-    "homepage": "https://github.com/zachleigh/wordnet-php",
+    "homepage": "https://github.com/zachleigh/wordnetphp",
     "license": "MIT",
     "authors": [
         {

@@ -68,4 +68,14 @@ class WordNetPHP
 
         return $parser->handle();
     }
+
+    /**
+     * Return raw wordnet lookup.
+     *
+     * @return string
+     */
+    public function raw()
+    {
+        return $this->result;
+    }
 }
