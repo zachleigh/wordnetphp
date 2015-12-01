@@ -2,6 +2,7 @@
 
 namespace WordNetPHP;
 
+use WordNetPHP\Config\Config;
 use WordNetPHP\WordNet\WordNetConsole;
 use WordNetPHP\Parse\Parsers\PartsOfSpeech;
 
@@ -31,11 +32,11 @@ class WordNetPHP
     /**
      * Construct.
      */
-    public function __construct($config = null)
+    public function __construct($configFile = null)
     {
-        $this->config = ($config ? $config : include dirname(__DIR__).'/src/config.php');
+        $this->config = Config::getInstance($configFile);
 
-        $wordNetPath = $this->getWordNetPath();
+        $wordNetPath = $this->config->getPath();
 
         $this->wordNet = new WordNetConsole($wordNetPath);
     }
@@ -66,41 +67,5 @@ class WordNetPHP
         $parser = new PartsOfSpeech($this->result);
 
         return $parser->handle();
-    }
-
-    /**
-     * Find WordNet path.
-     *
-     * @return string/Exception
-     */
-    private function getWordNetPath()
-    {
-        if ($this->config['path']) {
-            if (!$this->commandExists()) {
-                throw new \Exception('Invalid path provided in config.php.');
-            }
-
-            return $this->config['path'];
-        }
-
-        $path = trim(shell_exec('which wn'));
-
-        if (!$path) {
-            throw new \Exception('WordNet cannot be found on local machine.');
-        }
-
-        return $path;
-    }
-
-    /**
-     * Validate command exists.
-     *
-     * @return bool
-     */
-    private function commandExists()
-    {
-        $response = shell_exec('which '.$this->config['path']);
-
-        return (empty($response) ? false : true);
     }
 }

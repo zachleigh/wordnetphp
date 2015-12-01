@@ -3,10 +3,21 @@
 namespace WordNetPHP\tests;
 
 use WordNetPHP\WordNetPHP;
+use WordNetPHP\Config\Config;
 use WordNetPHP\Tests\TestCase;
 
 class ConfigTest extends TestCase
 {
+    /**
+     * Reset config file after class.
+     */
+    public function tearDown()
+    {
+        $config = Config::getInstance();
+
+        $config->setConfigFile();
+    }
+
     /**
      * @test
      *
