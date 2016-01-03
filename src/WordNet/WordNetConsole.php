@@ -30,6 +30,6 @@ class WordNetConsole
      */
     public function overview($word)
     {
-        return shell_exec($this->wordNetPath.' '.$word.' -over');
+        return shell_exec($this->wordNetPath.' "'.$word.'" -over');
     }
 }
